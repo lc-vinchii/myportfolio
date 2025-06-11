@@ -1,6 +1,6 @@
 export const portfolioConfig = {
   personal: {
-    name: "Ron Marvin De Jesus",
+    name: "Ron Marvin D. De Jesus",
     title: "Full Stack Developer",
     bio: "Passionate developer with 5+ years of experience building modern web applications. I love creating efficient, scalable solutions and learning new technologies.",
     email: "ronmarvin.dejesus@gmail.com",
