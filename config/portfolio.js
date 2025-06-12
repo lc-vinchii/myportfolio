@@ -181,7 +181,7 @@ export const portfolioConfig = {
         "A full-stack e-commerce solution with inventory management, and admin dashboard.",
       longDescription:
         "Designed and developed a web application to facilitate client operations for both POS system and e-commerce platform. Utilized MySQL, PHP, JavaScript, HTML/CSS to develop the web app. Features include user authentication, product catalog, shopping cart, order management, and an admin dashboard for inventory control.",
-      image: "/images/projects/preview-1.png?height=300&width=500",
+      image: "/images/projects/preview-1.png",
       techStack: ["MySQL", "PHP", "JavaScript", "HTML", "CSS"],
       liveUrl: "https://invsystem.42web.io/",
       githubUrl: "",
