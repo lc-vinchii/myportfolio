@@ -5,7 +5,7 @@ export const portfolioConfig = {
     bio: "Passionate developer with 2+ years of experience building modern web applications. I love creating efficient, scalable solutions and learning new technologies.",
     email: "ronmarvin.dejesus@gmail.com",
     github: "https://github.com/lc-vinchii",
-    linkedin: "https://linkedin.com/in/alexjohnson",
+    linkedin: "https://linkedin.com/in/ron-marvin-de-jesus-686464365/",
     location: "Bulacan, Philippines",
   },
 
