@@ -18,7 +18,7 @@ export default function Contact({
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 justify-items-center">
           <a
             href={`mailto:${personal.email}`}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs">
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs mx-auto">
             <Mail className="w-8 h-8 mb-3 text-emerald-400" />
             <span className="font-medium">Email</span>
             <span className="text-sm text-gray-400 mt-1">Send a message</span>
@@ -28,7 +28,7 @@ export default function Contact({
             href={personal.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs">
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs mx-auto">
             <Github className="w-8 h-8 mb-3 text-gray-400" />
             <span className="font-medium">GitHub</span>
             <span className="text-sm text-gray-400 mt-1">View my code</span>
@@ -38,14 +38,14 @@ export default function Contact({
             href={personal.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs">
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs mx-auto">
             <Linkedin className="w-8 h-8 mb-3 text-amber-400" />
             <span className="font-medium">LinkedIn</span>
             <span className="text-sm text-gray-400 mt-1">Connect with me</span>
           </a>
 
           <div
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs">
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs mx-auto">
             <MapPin className="w-8 h-8 mb-3 text-red-400" />
             <span className="font-medium">Location</span>
             <span className="text-sm text-gray-400 mt-1">{personal.location}</span>
