@@ -109,7 +109,7 @@ export default function Projects({ projects }) {
               }}
             >
               <div className="relative overflow-hidden">
-                <img
+                <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   width={500}
@@ -165,12 +165,13 @@ export default function Projects({ projects }) {
                 <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               </button>
 
-              <img
+              <Image
                 src={selectedProjectData.image || "/placeholder.svg"}
                 alt={selectedProjectData.title}
                 width={800}
                 height={400}
                 className="w-full h-64 md:h-80 object-cover"
+                unoptimized
               />
             </div>
 
