@@ -36,7 +36,7 @@ export default function TechStack({ techStack }) {
   }
 
   return (
-    <div className="pb-20 px-4">
+    <div className="pb-20 pt-10 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Tech Stack</h2>

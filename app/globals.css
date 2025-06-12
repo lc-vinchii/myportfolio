@@ -85,17 +85,21 @@ html {
   background: #059669;
 }
 
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar-track {
-  background: #374151;
-}
+@media (prefers-color-scheme: dark) {
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #10b981;
-}
+  /* Dark mode scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #374151;
+  }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #059669;
+  ::-webkit-scrollbar-thumb {
+    background: #10b981;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+  }
+
 }
 
 /* Grid horizontal centering for fewer items */

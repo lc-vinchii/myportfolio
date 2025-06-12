@@ -67,7 +67,7 @@ export default function Portfolio() {
         <Hero personal={portfolioConfig.personal} />
       </section>
 
-      <section ref={addToRefs} className="opacity-0">
+      <section ref={addToRefs} className="opacity-0 bg-white dark:bg-gray-900 transition-colors duration-500">
         <TechStack techStack={portfolioConfig.techStack} />
       </section>
 

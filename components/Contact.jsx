@@ -45,7 +45,7 @@ export default function Contact({
           </a>
 
           <div
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl w-full max-w-xs">
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 w-full max-w-xs">
             <MapPin className="w-8 h-8 mb-3 text-red-400" />
             <span className="font-medium">Location</span>
             <span className="text-sm text-gray-400 mt-1">{personal.location}</span>
@@ -53,7 +53,7 @@ export default function Contact({
         </div>
 
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-gray-400">© 2022 {personal.name}. Built with Next.js and Tailwind CSS.</p>
+          <p className="text-gray-400">© 2025 {personal.name}. Built with Next.js and Tailwind CSS.</p>
         </div>
       </div>
     </div>
