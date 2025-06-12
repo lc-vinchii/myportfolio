@@ -53,7 +53,7 @@ export default function Contact({
         </div>
 
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-gray-400">© 2024 {personal.name}. Built with Next.js and Tailwind CSS.</p>
+          <p className="text-gray-400">© 2022 {personal.name}. Built with Next.js and Tailwind CSS.</p>
         </div>
       </div>
     </div>
