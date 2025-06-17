@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 
 export default function TechStack({ techStack }) {
   const [currentPage, setCurrentPage] = useState(0)
@@ -93,7 +94,17 @@ export default function TechStack({ techStack }) {
                 }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="text-3xl">{tech.icon}</div>
+                  {tech.svg ? (
+                    <Image
+                      src={tech.svg || "/placeholder.svg"}
+                      alt={tech.name}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div className="text-3xl">{tech.icon}</div>
+                  )}
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{tech.name}</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{tech.category}</p>

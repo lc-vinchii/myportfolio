@@ -1,7 +1,11 @@
 export const portfolioConfig = {
   personal: {
     name: "Ron Marvin De Jesus",
-    title: "Full Stack Developer",
+    titles: [
+      "Full Stack Developer",
+      "QA Automation Specialist",
+      "DevOps Engineer"
+    ],
     bio: "Passionate developer with 2+ years of experience building modern web applications. I love creating efficient, scalable solutions and learning new technologies.",
     email: "ronmarvin.dejesus@gmail.com",
     github: "https://github.com/lc-vinchii",
@@ -15,6 +19,7 @@ export const portfolioConfig = {
     category: "Language",
     level: "Expert",
     icon: "📜",
+    svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
     description: "Dynamic scripting for interactive web applications",
   },
   {
@@ -22,6 +27,7 @@ export const portfolioConfig = {
     category: "Frontend",
     level: "Expert",
     icon: "🌀",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
     description: "Simplified DOM manipulation and AJAX handling",
   },
   {
@@ -29,6 +35,7 @@ export const portfolioConfig = {
     category: "Frontend",
     level: "Advanced",
     icon: "🎨",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg",
     description: "Responsive CSS framework for layout and components",
   },
   {
@@ -36,6 +43,7 @@ export const portfolioConfig = {
     category: "Frontend",
     level: "Advanced",
     icon: "⚛️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     description: "Component-based UI library using hooks and context",
   },
   {
@@ -43,6 +51,7 @@ export const portfolioConfig = {
     category: "Frontend",
     level: "Advanced",
     icon: "🎨",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg",
     description: "Styling and layout for responsive design",
   },
   {
@@ -50,6 +59,7 @@ export const portfolioConfig = {
     category: "Frontend",
     level: "Advanced",
     icon: "🌬️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     description: "Utility-first CSS framework for rapid UI development",
   },
   {
@@ -57,6 +67,8 @@ export const portfolioConfig = {
     category: "Language",
     level: "Expert",
     icon: "🐘",
+    // svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg",
+    svg: "/images/tech/php.svg",
     description: "Server-side scripting for dynamic websites",
   },
   {
@@ -64,6 +76,7 @@ export const portfolioConfig = {
     category: "Backend Framework",
     level: "Advanced",
     icon: "⚙️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yii/yii-original.svg",
     description: "High-performance PHP framework for web applications",
   },
   {
@@ -71,6 +84,7 @@ export const portfolioConfig = {
     category: "Backend Framework",
     level: "Advanced",
     icon: "🚀",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
     description: "Elegant PHP framework with expressive syntax",
   },
   {
@@ -78,6 +92,7 @@ export const portfolioConfig = {
     category: "Language",
     level: "Advanced",
     icon: "📘",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     description: "Typed superset of JavaScript for large-scale apps",
   },
   {
@@ -85,6 +100,7 @@ export const portfolioConfig = {
     category: "Backend",
     level: "Expert",
     icon: "🟢",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     description: "Server-side JavaScript runtime for scalable applications",
   },
   {
@@ -92,6 +108,7 @@ export const portfolioConfig = {
     category: "Framework",
     level: "Intermediate",
     icon: "▲",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     description: "Full-stack React framework for SSR and API routes",
   },
   {
@@ -99,6 +116,7 @@ export const portfolioConfig = {
     category: "Desktop",
     level: "Advanced",
     icon: "🖥️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg",
     description: "Build cross-platform desktop apps using web tech",
   },
   {
@@ -106,6 +124,7 @@ export const portfolioConfig = {
     category: "Language",
     level: "Advanced",
     icon: "🐍",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     description: "Versatile language for scripting, automation, and ML",
   },
   {
@@ -113,6 +132,7 @@ export const portfolioConfig = {
     category: "Language",
     level: "Intermediate",
     icon: "☕",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     description: "Object-oriented language for cross-platform development",
   },
   {
@@ -120,6 +140,7 @@ export const portfolioConfig = {
     category: "Language",
     level: "Intermediate",
     icon: "💻",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg",
     description: "High-performance programming for system-level software",
   },
   {
@@ -127,6 +148,7 @@ export const portfolioConfig = {
     category: "Testing",
     level: "Expert",
     icon: "🎭",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg",
     description: "E2E browser testing with fast and reliable automation",
   },
   {
@@ -134,6 +156,7 @@ export const portfolioConfig = {
     category: "Testing",
     level: "Expert",
     icon: "🧪",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg",  
     description: "Cross-browser automation for web applications",
   },
   {
@@ -155,6 +178,7 @@ export const portfolioConfig = {
     category: "Database",
     level: "Expert",
     icon: "🗄️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg",
     description: "Structured query language for managing relational databases",
   },
   {
@@ -162,6 +186,7 @@ export const portfolioConfig = {
     category: "Cloud",
     level: "Advanced",
     icon: "☁️",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     description: "Scalable cloud services for computing, storage, and deployment",
   },
   {
@@ -169,6 +194,7 @@ export const portfolioConfig = {
     category: "Cloud",
     level: "Advanced",
     icon: "🌐",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg",
     description: "Cloud infrastructure provider for simplified deployments",
   },
   ],
@@ -181,7 +207,10 @@ export const portfolioConfig = {
         "A full-stack e-commerce solution with inventory management, and admin dashboard.",
       longDescription:
         "Designed and developed a web application to facilitate client operations for both POS system and e-commerce platform. Utilized MySQL, PHP, JavaScript, HTML/CSS to develop the web app. Features include user authentication, product catalog, shopping cart, order management, and an admin dashboard for inventory control.",
-      image: "/images/projects/preview-1.PNG",
+      images: [
+        "1.png",
+        // "1.png",
+      ],
       techStack: ["MySQL", "PHP", "JavaScript", "HTML", "CSS"],
       liveUrl: "https://invsystem.42web.io/",
       githubUrl: "",

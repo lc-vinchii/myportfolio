@@ -1,12 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ExternalLink, Github, X } from "lucide-react"
+import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 export default function Projects({ projects }) {
   const [selectedProject, setSelectedProject] = useState(null)
   const [filter, setFilter] = useState("all")
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imageLoading, setImageLoading] = useState(false)
   const modalRef = useRef(null)
 
   const filteredProjects = filter === "all" ? projects : projects.filter((p) => p.featured)
@@ -23,10 +25,44 @@ export default function Projects({ projects }) {
 
   const openProject = (projectId) => {
     setSelectedProject(projectId)
+    setCurrentImageIndex(0)
   }
 
   const closeProject = () => {
     setSelectedProject(null)
+    setCurrentImageIndex(0)
+  }
+
+  const nextImage = () => {
+    const selectedProjectData = projects.find((p) => p.id === selectedProject)
+    if (selectedProjectData && selectedProjectData.images) {
+      setImageLoading(true)
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % selectedProjectData.images.length)
+        setImageLoading(false)
+      }, 150)
+    }
+  }
+
+  const prevImage = () => {
+    const selectedProjectData = projects.find((p) => p.id === selectedProject)
+    if (selectedProjectData && selectedProjectData.images) {
+      setImageLoading(true)
+      setTimeout(() => {
+        setCurrentImageIndex(
+          (prev) => (prev - 1 + selectedProjectData.images.length) % selectedProjectData.images.length,
+        )
+        setImageLoading(false)
+      }, 150)
+    }
+  }
+
+  const goToImage = (index) => {
+    setImageLoading(true)
+    setTimeout(() => {
+      setCurrentImageIndex(index)
+      setImageLoading(false)
+    }, 150)
   }
 
   // Handle outside click
@@ -110,7 +146,7 @@ export default function Projects({ projects }) {
             >
               <div className="relative overflow-hidden">
                 <Image
-                  src={project.image || "/placeholder.svg"}
+                  src={`/images/projects/${project.id}/${project.images[0]}` || "/placeholder.svg"}
                   alt={project.title}
                   width={500}
                   height={300}
@@ -165,13 +201,57 @@ export default function Projects({ projects }) {
                 <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               </button>
 
-              <Image
-                src={selectedProjectData.image || "/placeholder.svg"}
-                alt={selectedProjectData.title}
-                width={800}
-                height={400}
-                className="w-full h-64 md:h-80 object-cover"
-              />
+              {/* Image Carousel */}
+              <div className="relative overflow-hidden">
+                <div
+                  className={`transition-all duration-300 ${imageLoading ? "opacity-50 scale-95" : "opacity-100 scale-100"}`}
+                >
+                  <Image
+                    src={
+                      selectedProjectData.images && selectedProjectData.images.length > 0
+                        ? `/images/projects/${selectedProjectData.id}/${selectedProjectData.images[currentImageIndex]}`
+                        : selectedProjectData.image || "/placeholder.svg"
+                    }
+                    alt={selectedProjectData.title}
+                    width={800}
+                    height={400}
+                    className="w-full h-64 md:h-80 object-cover transition-all duration-500"
+                  />
+                </div>
+
+                {/* Carousel Controls */}
+                {selectedProjectData.images && selectedProjectData.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition-all duration-300 hover:scale-110"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition-all duration-300 hover:scale-110"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Image Indicators */}
+                    {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                      {selectedProjectData.images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => goToImage(index)}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                            index === currentImageIndex
+                              ? "bg-white shadow-lg"
+                              : "bg-white bg-opacity-50 hover:bg-opacity-75"
+                          }`}
+                        />
+                      ))}
+                    </div> */}
+                  </>
+                )}
+              </div>
             </div>
 
             <div className="p-8">
@@ -196,26 +276,28 @@ export default function Projects({ projects }) {
               </div>
 
               <div className="flex gap-4">
-                <a
-                  href={selectedProjectData.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  Live Demo
-                </a>
-                {selectedProjectData.githubUrl &&
-                <a
-                  href={selectedProjectData.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                  View Code
-                </a>
-                }
+                {selectedProjectData.liveUrl && (
+                  <a
+                    href={selectedProjectData.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Live Demo
+                  </a>
+                )}
+                {selectedProjectData.githubUrl && (
+                  <a
+                    href={selectedProjectData.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+                  >
+                    <Github className="w-5 h-5" />
+                    View Code
+                  </a>
+                )}
               </div>
             </div>
           </div>

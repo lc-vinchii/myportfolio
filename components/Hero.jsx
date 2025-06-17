@@ -6,6 +6,8 @@ export default function Hero({
   personal
 }) {
   const [isVisible, setIsVisible] = useState(false)
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -13,6 +15,19 @@ export default function Hero({
     }, 500)
     return () => clearTimeout(timer);
   }, [])
+
+  // Title rotation effect with smooth transitions
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentTitleIndex((prev) => (prev + 1) % personal.titles.length)
+        setIsTransitioning(false)
+      }, 300) // Half of transition duration
+    }, 3000) // Change every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [personal.titles.length])
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-20">
@@ -36,8 +51,15 @@ export default function Hero({
             {personal.name}
           </h1>
 
-          <h2
-            className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-light">{personal.title}</h2>
+          <div className="h-12 mb-6 flex items-center justify-center">
+            <h2
+              className={`text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-light transition-all duration-600 ${
+                isTransitioning ? "opacity-0 transform translate-y-4" : "opacity-100 transform translate-y-0"
+              }`}
+            >
+              {personal.titles[currentTitleIndex]}
+            </h2>
+          </div>
 
           <p
             className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
