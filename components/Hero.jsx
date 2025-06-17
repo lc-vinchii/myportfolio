@@ -24,7 +24,7 @@ export default function Hero({
         setCurrentTitleIndex((prev) => (prev + 1) % personal.titles.length)
         setIsTransitioning(false)
       }, 300) // Half of transition duration
-    }, 3000) // Change every 3 seconds
+    }, 2500) // Change every 3 seconds
 
     return () => clearInterval(interval)
   }, [personal.titles.length])
